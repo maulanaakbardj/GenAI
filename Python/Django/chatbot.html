@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+</head>
+<body>
+    <h1>Chatbot</h1>
+    <form method="POST" action="{% url 'chatbot' %}">
+        {% csrf_token %}
+        <label for="user_message">You:</label>
+        <input type="text" name="user_message" id="user_message" required><br><br>
+        <input type="submit" value="Send">
+    </form>
+    <br>
+    <label for="bot_response">Bot:</label>
+    <textarea name="bot_response" id="bot_response" rows="5" cols="50" readonly>{{ bot_response }}</textarea>
+</body>
+</html>
